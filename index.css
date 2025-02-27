@@ -1,0 +1,81 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #fff5f8;
+}
+
+.bar-with-heart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 50px;
+    background-color: hotpink;
+}
+
+.heart {
+    font-size: 25px;
+    color: red;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 30px;
+    font-family: cursive;
+    color: hotpink;
+    text-shadow: 2px 2px 10px hotpink;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: hotpink;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: deeppink;
+}
+
+#gif-container {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+        width: 80%;
+    }
+}
