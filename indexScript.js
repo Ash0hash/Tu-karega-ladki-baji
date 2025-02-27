@@ -12,13 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnNo) {
         btnNo.addEventListener('click', function () {
             let messages = [
-                "🤔soch lo 🤔"
-                "😢 chalo na sath mey khaenge.. 😢"
-                "😩 mere liye nhi chalogi! 😩"
+                "🤔 soch lo 🤔",
+                "😢 chalo na sath mey khaenge.. 😢",
+                "😩 mere liye nhi chalogi! 😩",
                 "😭 Pookie please 😭"
             ];
 
-            btnNo.innerHTML = messages[Math.floor(Math.random() * messages.length)];
+            let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            btnNo.innerHTML = randomMessage;
 
             let gifArray = [
                 'https://media.tenor.com/UdThavVus9oAAAAi/peach-and.gif',
@@ -27,11 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 'https://media.tenor.com/_28-tA-sTvwAAAAi/chibi-cat-mochi-cat.gif'
             ];
 
-            gifContainer.innerHTML = ""; // Clear previous content
+            // ✅ Ensure `gifContainer` exists before modifying it
+            if (!gifContainer) {
+                gifContainer = document.createElement('div');
+                gifContainer.id = 'gif-container';
+                document.body.appendChild(gifContainer);
+            }
+
+            gifContainer.innerHTML = ""; // Clear previous GIF
 
             let gifImage = document.createElement('img');
             gifImage.src = gifArray[Math.floor(Math.random() * gifArray.length)];
             gifImage.alt = 'Random Crying Cat GIF';
+            gifImage.style.maxWidth = "100%"; // Ensure it fits within the container
+            gifImage.style.height = "auto";
 
             gifImage.onerror = function () {
                 gifContainer.innerHTML = "⚠️ GIF failed to load. Please try again.";
